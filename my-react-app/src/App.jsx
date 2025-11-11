@@ -1,23 +1,12 @@
 import {Task} from "./components/Task.jsx";
 import './App.css'
-import styled from "styled-components";
 import {useState} from "react";
 import {CreateTaskArea} from "./components/CreateTaskArea.jsx";
 import {FilterArea} from "./components/FilterArea.jsx";
 import {Statistics} from "./components/Statistics.jsx";
 import {FilterEnum, TaskArrayKey} from "./constants/Enum.jsx";
 import {filterTasks, useLocalStorage} from "./utils/Utils.jsx";
-
-const AppArea = styled.div`
-    padding: 20px 32px;
-    border: 1px solid #e0e4ea;
-    border-radius: 1em;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-`;
+import {AppArea} from "./App.styles.js";
 
 function App() {
     const [tasks, setTasks] = useLocalStorage(TaskArrayKey, []);
