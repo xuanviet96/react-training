@@ -40,11 +40,11 @@ function App() {
 
     return (
         <AppArea>
-            {CreateTaskArea({addTask})}
-            {Statistics({tasks})}
-            {FilterArea({setFilter})}
+            <CreateTaskArea addTask={addTask} />
+            <Statistics tasks={tasks} />
+            <FilterArea setFilter={setFilter} /> 
             {tasks.filter(element => filterTasks(filter, element))
-                .map((element) => Task({element, updateTask}))}
+                .map((element) => <Task key={element.description} element={element} updateTask={updateTask} />)}
         </AppArea>
     )
 
